@@ -28,3 +28,74 @@ CREATE TABLE `segments` (
   KEY `fileId` (`fileid`),  
   CONSTRAINT `segments_ibfk_1` FOREIGN KEY (`fileid`) REFERENCES `files` (`guid`)  
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+##API
+W obecnym kształcie istnieją dwa kontrolery, jeden obsługujący segmenty i jeden obsługujący pliki. Napisałem też metodę testową, przyjmującą w zapytaniu plik wraz z listą segmentów do niego przynależnych. To jak w ostatecznym kształcie będzie wyglądał kontroler czy też kontrolery zależy od sposobu w jakim skryp będzie przesyłał dane do bazy.
+
+##POST
+adresy do posta:
+1. http://localhost:8080/files
+2. http://localhost:8080/segments
+Ad. 1: Żeby zapisać w bazie danych obiekt typu file, musimy wysłać przez API na adres "http://localhost:8080/files" zapytanie zawierającę odpowiednie dane
+  `guId` - liczba całkowita, nie może być puste  
+  `filename` varchar(250) - Ciąg znaków, nie może być puste  
+  `srcLang` varchar(50) Ciąg znaków, nie może być puste   
+  `trgLang` varchar(50) Ciąg znaków, nie może być puste  
+  `customer` varchar(250) Ciąg znaków, może być puste 
+  `specialisation` int(3) Ciąg znaków, może być puste   
+  `engine` varchar(150) Ciąg znaków, może być puste   
+  `project` varchar(100) Ciąg znaków, może być puste   
+  `translator` varchar(250) Ciąg znaków, może być puste  
+  `addedOn` date NOT NULL Ciąg znaków, nie może być puste / format "yyyy-mm-dd"  
+
+Przykład 1:
+{
+    "guId": 1,
+    "fileName": "test.xml",
+    "srcLang" : "EN",
+    "trgLang" : "PL",
+    "addedOn" : "2020-10-10",
+    "engine": "Engine",
+    "customer": "Customer",
+    "project": "Testowy project",
+    "translator": "Kowalski"
+}
+Przykład 2:
+{
+    "guId": 1,
+    "fileName": "test.xml",
+    "srcLang" : "EN",
+    "trgLang" : "PL",
+    "addedOn" : "2020-10-10",
+}
+! Jak widać w przykładzie wyżej wystarczy że zapytanie zawiera jedynie pola wymagane
+Przykład 3:
+{
+    "guId": 6,
+    "fileName": "test.xml",
+    "srcLang" : "EN",
+    "trgLang" : "PL",
+    "addedOn" : "2020-10-10",
+    "translator": "Kowalski",
+    "nie_uwzgledni": "nie uwzględni"
+}
+! W przypadku gdy zapytanie zawiera błędne pole, będzie ono zignornowane, a rekord zapisze się w bazie danych jeżeli pozostałe pola przejdą walidacje
+
+Ad. 1: Żeby zapisać w bazie danych obiekt typu segment, musimy wysłać przez API na adres "http://localhost:8080/segments" zapytanie zawierającę odpowiednie dane
+  `guId` - liczba całkowita, nie może być puste,  
+  `srcText` Ciąg znaków, nie może być puste ,  
+  `trgText` Ciąg znaków, nie może być puste ,  
+  `mtText` Ciąg znaków, może być puste ,  
+  `matchRate` double liczba zmiennoprzecinkowa, może być puste,  
+  `ed` double double liczba zmiennoprzecinkowa, może być puste,  
+  `fileid` int(11)  liczba całkowita, <b>nie może być puste</b> / klucz obcy ustanawiający relacje z obiektem typu "file" do którego przynależy, musi się więc odnosić do istniejącego pliku w bazie danych o konkretnym 'guiId' 
+
+##DELETE
+Rekordy można także usuwać z bazy danych
+adresy:
+1. http://localhost:8080/files
+2. http://localhost:8080/segments
+
+
+
+
