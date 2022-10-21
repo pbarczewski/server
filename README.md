@@ -105,7 +105,7 @@ Ad. 2: Żeby zapisać w bazie danych obiekt typu segment, musimy wysłać przez 
 ! Zapytania analogicznie do obiektów typu "file", błędne pola będą zignorowane, a zapytanie musi zawierać tylko wymagane pola, pozostałe można pominąć.  
   
 ### UPDATE
-Zapytanie działa dokładnie tak samo jak POST, jedyna różnica polega na tym że w przypadku wysyłania danych z guId znajdującym się już w bazie, dane te bedą zaktualizowane, a nie dodane ponownie w innym rekordzie.  
+Zapytanie działa dokładnie tak samo jak POST, jedyna różnica polega na tym że w przypadku wysyłania danych z "guId" znajdującym się już w bazie, dane te bedą zaktualizowane, a nie dodane ponownie w innym rekordzie.  
   
 ###  DELETE
 Rekordy można także usuwać z bazy danych  
@@ -118,7 +118,9 @@ Przykład 1:
 {  
     "guId": 2  
 }  
-Żeby usunąć plik wystarczy nam informacja o jego guId. Zapytanie może zawierać więcej informacji, ale nie są one obowiązkowe. Nie może natomiast nie zawierać "guId", poniższe zapytanie nie zadziała:  
+Żeby usunąć plik wystarczy nam informacja o jego "guId". Zapytanie może zawierać więcej informacji, ale nie są one obowiązkowe. Nie może natomiast nie zawierać "guId", poniższe zapytanie nie zadziała:  
+
+!!! Usunięcie pliku usuwa również wszyskie segmenty do niego przynależne
 
 Przykład 2: nieprawidłowe zapytanie  
 {  
@@ -139,7 +141,7 @@ Przykład 1:
 {  
     "guId": 4  
 }  
-Żeby usunąć segment wystarczy nam informacja o jego guId. Zapytanie może zawierać więcej informacji, ale nie są one obowiązkowe. Nie może natomiast nie zawierać "guId", poniższe zapytanie nie zadziała:  
+Żeby usunąć segment wystarczy nam informacja o jego "guId". Zapytanie może zawierać więcej informacji, ale nie są one obowiązkowe. Nie może natomiast nie zawierać "guId", poniższe zapytanie nie zadziała:  
 
 Przykład 2 (nieprawidłowe zapytanie):  
 {  
@@ -150,6 +152,15 @@ Przykład 2 (nieprawidłowe zapytanie):
     "ed": 1.2,  
     "fileId": 1  
 }
+
+### GET
+Służy do pobrania wyników z bazy danych. Adresy  
+1. http://localhost:8080/files  
+2. http://localhost:8080/segments  
+
+Ad. 1: Zapytanie wyświetli wszystkie obiekty typu "file" wraz z przynależnymi do niego segmentami.  
+Ad. 2: Zapytanie wyświetli wszystkie obiekty typu "segment".  
+
 
 
 
