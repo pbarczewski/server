@@ -104,6 +104,9 @@ Ad. 2: Żeby zapisać w bazie danych obiekt typu segment, musimy wysłać przez 
 }  
 ! Zapytania analogicznie do obiektów typu "file", błędne pola będą zignorowane, a zapytanie musi zawierać tylko wymagane pola, pozostałe można pominąć.  
   
+### UPDATE
+Zapytanie działa dokładnie tak samo jak POST, jedyna różnica polega na tym że w przypadku wysyłania danych z guId znajdującym się już w bazie, dane te bedą zaktualizowane, a nie dodane ponownie w innym rekordzie.  
+  
 ###  DELETE
 Rekordy można także usuwać z bazy danych  
 adresy:  
