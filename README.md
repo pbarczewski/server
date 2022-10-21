@@ -208,5 +208,10 @@ Przykład 1:
 1. W planach przygotowanie metody która tworzy zarówno pliki jak i segmenty w jednym zapytaniu.  
 2. Automatyzacja zapytań z parametrami, ich tworzenie jest obecnie bardzo proste, ale doprowadzi do mnożenie się metod (w zależności od konfiguracji), mam jakiś pomysł jak to zrobić wydajniej, zobaczymy jak wyjdzie.
 https://localhost.run/  
-https://9999f0b2d51c65.lhr.life
+https://9999f0b2d51c65.lhr.life:
+
+Dane najłatwiej wysyłać za pomocą postmana, tutaj wersja webowa: https://web.postman.co/?workspaceOnboarding=show  
+Żeby wysłać posta 
+1. Wybieramy ze wstążki POST  
+![image](https://user-images.githubusercontent.com/46624539/197173296-3ac37d27-e401-4d0b-aa50-0a58ff61cc2d.png)
 
