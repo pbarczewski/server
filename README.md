@@ -206,14 +206,31 @@ Przykład 1:
 
 ### Status (co dalej)
 1. W planach przygotowanie metody która tworzy zarówno pliki jak i segmenty w jednym zapytaniu.  
-2. Automatyzacja zapytań z parametrami, ich tworzenie jest obecnie bardzo proste, ale doprowadzi do mnożenie się metod (w zależności od konfiguracji), mam jakiś pomysł jak to zrobić wydajniej, zobaczymy jak wyjdzie.
+2. Automatyzacja zapytań z parametrami, ich tworzenie jest obecnie bardzo proste, ale doprowadzi do mnożenie się metod (w zależności od konfiguracji), mam jakiś pomysł jak to zrobić wydajniej, zobaczymy jak wyjdzie.  
+3. Odpowiedzi na requesy, obecnie niestety nie mam implementacji odpowiedzi gdy wysyłane są metody POST, UPDATE, DELETE
 https://localhost.run/  
 https://9999f0b2d51c65.lhr.life:
 
 Dane najłatwiej wysyłać za pomocą postmana, tutaj wersja webowa: https://web.postman.co/?workspaceOnboarding=show  
-Żeby wysłać posta 
+#### Wysyłanie POST 
 1. Wybieramy ze wstążki POST  
 ![image](https://user-images.githubusercontent.com/46624539/197173296-3ac37d27-e401-4d0b-aa50-0a58ff61cc2d.png)  
 2. Wklejamy do paska adres, wchodzimy w zakładkę Body i ustawiamy "raw" i "JSON", jak na poniższym screenie:
 3. ![image](https://user-images.githubusercontent.com/46624539/197173659-6d14eed3-650e-4832-91c6-438b7ec482e2.png)
+4. Następnie tworzymy obiekt i klikamy "SEND"
+![image](https://user-images.githubusercontent.com/46624539/197173968-39bd4ba5-7eac-4510-9256-0e0aab042287.png)
 
+#### Wysyłanie UPDATE
+1. Wszystkie kroki tak samo jak w poście
+
+#### Wysyłanie DELETE
+1. Wybieramy ze wstążki DELETE
+2. Wklejamy do paska adres, wchodzimy w zakładkę Body i ustawiamy "raw" i "JSON"
+3. Tworzymy obiekt (wystarczy samo "guId") i klikamy "SEND"
+
+#### Wysyłanie GET
+1. Wybieramy ze wstążki GET
+2. Wklejamy adres, patrzymy na wyniki;p
+
+##  UWAGA
+Jak wyżej napisałem, nie ma jeszcze implementacji odpowiedzi na zapytania POST, DELETE, UPDATE, więc można mieć wrażenie że po "SEND" nic się nei dzieje, niestety żeby zobaczyć zmiany trzeba wejść w GET i zobaczyć co prezentują wyniki. Implementacja odpowiedzi jest w drodze:)
