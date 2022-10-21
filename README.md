@@ -80,7 +80,7 @@ Przykład 3:
     "addedOn" : "2020-10-10",  
     "translator": "Kowalski",  
     "nie_uwzgledni": "nie uwzględni"  
-}
+}  
 ! W przypadku gdy zapytanie zawiera błędne pole, będzie ono zignornowane, a rekord zapisze się w bazie danych jeżeli pozostałe pola przejdą walidacje  
 
 Ad. 2: Żeby zapisać w bazie danych obiekt typu segment, musimy wysłać przez API na adres "http://localhost:8080/segments" zapytanie zawierającę odpowiednie dane  
@@ -110,8 +110,43 @@ adresy:
 1. http://localhost:8080/files  
 2. http://localhost:8080/segments  
 
-Ad 2.: Segmenty można usuwać wysyłając z adresu http://localhost:8080/segments zapytanie metodą DELETE.
+Ad. 1: Pliki można usuwać wysyłając zapytanie metodą DELETE na adres http://localhost:8080/files  
+Przykład 1:  
+{  
+    "guId": 2  
+}  
+Żeby usunąć plik wystarczy nam informacja o jego guId. Zapytanie może zawierać więcej informacji, ale nie są one obowiązkowe. Nie może natomiast nie zawierać "guId", poniższe zapytanie nie zadziała:  
 
+Przykład 2: nieprawidłowe zapytanie
+{  
+    "fileName": "test.xml",  
+    "srcLang": "EN",  
+    "trgLang": "PL",  
+    "customer": null,  
+    "specialisation": null,  
+    "engine": null,  
+    "project": null,  
+    "translator": "Kowalski",  
+    "addedOn": "2020-10-10",  
+}  
+
+Ad. 2: Segmenty można usuwać wysyłając zapytanie metodą DELETE na adres http://localhost:8080/segments  
+
+Przykład 1:  
+{  
+    "guId": 4  
+}  
+Żeby usunąć segment wystarczy nam informacja o jego guId. Zapytanie może zawierać więcej informacji, ale nie są one obowiązkowe. Nie może natomiast nie zawierać "guId", poniższe zapytanie nie zadziała:  
+
+Przykład 2 (nieprawidłowe zapytanie):
+{  
+    "srcText": "To jest source",  
+    "trgText": "Zrodelko",  
+    "mtText": 1.2,  
+    "matchRate": 1,  
+    "ed": 1.2,  
+    "fileId": 1  
+}
 
 
 
