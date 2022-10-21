@@ -182,7 +182,7 @@ Przykład 1:
     "matchRate": 1,  
     "ed": 1.2,  
     "fileId": 1  
-    }, 
+    },  
     {  
     "guId": 2,  
     "srcText": "Source",  
