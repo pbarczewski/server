@@ -213,5 +213,7 @@ https://9999f0b2d51c65.lhr.life:
 Dane najłatwiej wysyłać za pomocą postmana, tutaj wersja webowa: https://web.postman.co/?workspaceOnboarding=show  
 Żeby wysłać posta 
 1. Wybieramy ze wstążki POST  
-![image](https://user-images.githubusercontent.com/46624539/197173296-3ac37d27-e401-4d0b-aa50-0a58ff61cc2d.png)
+![image](https://user-images.githubusercontent.com/46624539/197173296-3ac37d27-e401-4d0b-aa50-0a58ff61cc2d.png)  
+2. Wklejamy do paska adres, wchodzimy w zakładkę Body i ustawiamy "raw" i "JSON", jak na poniższym screenie:
+3. ![image](https://user-images.githubusercontent.com/46624539/197173659-6d14eed3-650e-4832-91c6-438b7ec482e2.png)
 
