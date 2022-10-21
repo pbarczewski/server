@@ -1,4 +1,4 @@
-# server
+# Server
 
 
 CREATE TABLE `files` (  
@@ -32,7 +32,7 @@ CREATE TABLE `segments` (
 ##  API
 W obecnym kształcie istnieją dwa kontrolery, jeden obsługujący segmenty i jeden obsługujący pliki. Napisałem też metodę testową, przyjmującą w zapytaniu plik wraz z listą segmentów do niego przynależnych. To jak w ostatecznym kształcie będzie wyglądał kontroler czy też kontrolery zależy od sposobu w jakim skryp będzie przesyłał dane do bazy.
 
-##  POST
+###  POST
 adresy do posta:
 1. http://localhost:8080/files
 2. http://localhost:8080/segments
@@ -81,20 +81,34 @@ Przykład 3:
 }
 ! W przypadku gdy zapytanie zawiera błędne pole, będzie ono zignornowane, a rekord zapisze się w bazie danych jeżeli pozostałe pola przejdą walidacje  
 
-Ad. 1: Żeby zapisać w bazie danych obiekt typu segment, musimy wysłać przez API na adres "http://localhost:8080/segments" zapytanie zawierającę odpowiednie dane  
+Ad. 2: Żeby zapisać w bazie danych obiekt typu segment, musimy wysłać przez API na adres "http://localhost:8080/segments" zapytanie zawierającę odpowiednie dane  
   `guId` - liczba całkowita, nie może być puste,   
   `srcText` Ciąg znaków, nie może być puste ,  
   `trgText` Ciąg znaków, nie może być puste ,  
   `mtText` Ciąg znaków, może być puste ,  
   `matchRate` double liczba zmiennoprzecinkowa, może być puste,  
   `ed` double double liczba zmiennoprzecinkowa, może być puste,  
-  `fileid` int(11)  liczba całkowita, <b>nie może być puste</b> / klucz obcy ustanawiający relacje z obiektem typu "file" do którego przynależy, musi się więc odnosić do istniejącego pliku w bazie danych o konkretnym 'guiId' 
-
+  `fileid` int(11)  liczba całkowita, <b>nie może być puste</b> / klucz obcy ustanawiający relacje z obiektem typu "file" do którego przynależy, musi się więc odnosić do istniejącego pliku w bazie danych o konkretnym 'guiId'.
+  
+  Przykład 1:  
+{
+    "guId": 1,  
+    "srcText": "To jest source",  
+    "trgText": "Zrodelko",  
+    "mtText": 1.2,  
+    "matchRate": 1,  
+    "ed": 1.2,  
+    "fileId": 1  
+}  
+! Zapytania analogicznie do obiektów typu "file", błędne pola będą zignorowane, a zapytanie musi zawierać tylko wymagane pola, pozostałe można pominąć.  
+  
 ###  DELETE
-Rekordy można także usuwać z bazy danych
-adresy:
-1. http://localhost:8080/files
-2. http://localhost:8080/segments
+Rekordy można także usuwać z bazy danych  
+adresy:  
+1. http://localhost:8080/files  
+2. http://localhost:8080/segments  
+
+Ad 2.: Segmenty można usuwać wysyłając z adresu http://localhost:8080/segments zapytanie metodą DELETE.
 
 
 
