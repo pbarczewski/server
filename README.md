@@ -36,7 +36,7 @@ W obecnym kształcie istnieją dwa kontrolery, jeden obsługujący segmenty i je
 adresy do posta:
 1. http://localhost:8080/files
 2. http://localhost:8080/segments
-Ad. 1: Żeby zapisać w bazie danych obiekt typu file, musimy wysłać przez API na adres "http://localhost:8080/files" zapytanie zawierającę odpowiednie dane
+Ad. 1: Żeby zapisać w bazie danych obiekt typu file, musimy wysłać przez API na adres "http://localhost:8080/files" zapytanie zawierającę odpowiednie dane  
   `guId` - liczba całkowita, nie może być puste  
   `filename` varchar(250) - Ciąg znaków, nie może być puste  
   `srcLang` varchar(50) Ciąg znaków, nie może być puste   
@@ -90,7 +90,7 @@ Ad. 1: Żeby zapisać w bazie danych obiekt typu segment, musimy wysłać przez 
   `ed` double double liczba zmiennoprzecinkowa, może być puste,  
   `fileid` int(11)  liczba całkowita, <b>nie może być puste</b> / klucz obcy ustanawiający relacje z obiektem typu "file" do którego przynależy, musi się więc odnosić do istniejącego pliku w bazie danych o konkretnym 'guiId' 
 
-##  DELETE
+#  DELETE
 Rekordy można także usuwać z bazy danych
 adresy:
 1. http://localhost:8080/files
