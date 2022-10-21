@@ -59,7 +59,8 @@ Przykład 1:
     "customer": "Customer",  
     "project": "Testowy project",  
     "translator": "Kowalski"  
-}
+}  
+
 Przykład 2:  
 {  
     "guId": 1,  
@@ -69,6 +70,7 @@ Przykład 2:
     "addedOn" : "2020-10-10",  
 }  
 ! Jak widać w przykładzie wyżej wystarczy że zapytanie zawiera jedynie pola wymagane  
+
 Przykład 3:  
 {
     "guId": 6,  
