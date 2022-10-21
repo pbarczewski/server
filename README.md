@@ -192,7 +192,7 @@ Przykład 1:
     "ed": 1.2,  
     "fileId": 1  
     },  
-    {
+    {  
     "guId": 3,  
     "srcText": "Source2",  
     "trgText": "Target2",  
@@ -207,5 +207,5 @@ Przykład 1:
 ### Status (co dalej)
 1. W planach przygotowanie metody która tworzy zarówno pliki jak i segmenty w jednym zapytaniu.  
 2. Automatyzacja zapytań z parametrami, ich tworzenie jest obecnie bardzo proste, ale doprowadzi do mnożenie się metod (w zależności od konfiguracji), mam jakiś pomysł jak to zrobić wydajniej, zobaczymy jak wyjdzie.
-
+https://localhost.run/
 
