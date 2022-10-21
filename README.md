@@ -172,34 +172,34 @@ Ad. 2: Zapytanie wyświetli wszystkie obiekty typu "segment".
 ### In progress
 Testowo pod adresem http://localhost:8080/segments2 umożliwione jest wysyłanie wielu segmentów, w liście. Przyjąłem założenie że każdy segment w liście należy do jednego pliku file, można to wyodrębnić ale dośc istotnie wpłynie to na wydajność.
 Przykład 1:
-[ 
-    {
-    "guId": 1,
-    "srcText": "To jest source",
-    "trgText": "Zrodelko",
-    "mtText": 1.2,
-    "matchRate": 1,
-    "ed": 1.2,
-    "fileId": 1
+[  
+    {  
+    "guId": 1,  
+    "srcText": "To jest source",  
+    "trgText": "Zrodelko",  
+    "mtText": 1.2,  
+    "matchRate": 1,  
+    "ed": 1.2,  
+    "fileId": 1  
     }, 
+    {  
+    "guId": 2,  
+    "srcText": "Source",  
+    "trgText": "Target",  
+    "mtText": 1.2,  
+    "matchRate": 1,  
+    "ed": 1.2,  
+    "fileId": 1  
+    },  
     {
-    "guId": 2,
-    "srcText": "Source",
-    "trgText": "Target",
-    "mtText": 1.2,
-    "matchRate": 1,
-    "ed": 1.2,
-    "fileId": 1
-    },
-    {
-    "guId": 3,
-    "srcText": "Source2",
-    "trgText": "Target2",
-    "mtText": 1.2,
-    "matchRate": 1,
-    "ed": 1.2,
-    "fileId": 1
-    }
+    "guId": 3,  
+    "srcText": "Source2",  
+    "trgText": "Target2",  
+    "mtText": 1.2,  
+    "matchRate": 1,  
+    "ed": 1.2,  
+    "fileId": 1  
+    }  
 ]
 
 
