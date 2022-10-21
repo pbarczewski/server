@@ -6,7 +6,8 @@
 * [UPDATE](#update)
 * [DELETE](#delete)
 * [GET](#get)
-* [STATUS](#uruchomienie)
+* [IN PROGRESS](#inprogress)
+* [STATUS](#status)
 
 ## Baza danych
 CREATE TABLE `files` (  
@@ -170,8 +171,8 @@ Ad. 1: Zapytanie wyświetli wszystkie obiekty typu "file" wraz z przynależnymi 
 Ad. 2: Zapytanie wyświetli wszystkie obiekty typu "segment".  
 
 ### In progress
-Testowo pod adresem http://localhost:8080/segments2 umożliwione jest wysyłanie wielu segmentów, w liście. Przyjąłem założenie że każdy segment w liście należy do jednego pliku file, można to wyodrębnić ale dośc istotnie wpłynie to na wydajność.
-Przykład 1:
+Testowo pod adresem http://localhost:8080/segments2 umożliwione jest wysyłanie wielu segmentów, w liście. Przyjąłem założenie że każdy segment wysyłany w liście należy do tego samego pliku, można to wyodrębnić ale dośc istotnie wpłynie to na wydajność.  
+Przykład 1:  
 [  
     {  
     "guId": 1,  
@@ -204,6 +205,7 @@ Przykład 1:
 
 
 ### Status (co dalej)
-W planach przygotowanie metody przesyłania segmentów w liście (
+1. W planach przygotowanie metody która tworzy zarówno pliki jak i segmenty w jednym zapytaniu.  
+2. Automatyzacja zapytań z parametrami, ich tworzenie jest obecnie bardzo proste, ale doprowadzi do mnożenie się metod (w zależności od konfiguracji), mam jakiś pomysł jak to zrobić wydajniej, zobaczymy jak wyjdzie.
 
 
