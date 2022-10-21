@@ -29,10 +29,10 @@ CREATE TABLE `segments` (
   CONSTRAINT `segments_ibfk_1` FOREIGN KEY (`fileid`) REFERENCES `files` (`guid`)  
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
-##API
+##  API
 W obecnym kształcie istnieją dwa kontrolery, jeden obsługujący segmenty i jeden obsługujący pliki. Napisałem też metodę testową, przyjmującą w zapytaniu plik wraz z listą segmentów do niego przynależnych. To jak w ostatecznym kształcie będzie wyglądał kontroler czy też kontrolery zależy od sposobu w jakim skryp będzie przesyłał dane do bazy.
 
-##POST
+##  POST
 adresy do posta:
 1. http://localhost:8080/files
 2. http://localhost:8080/segments
