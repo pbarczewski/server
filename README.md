@@ -117,7 +117,7 @@ Przykład 1:
 }  
 Żeby usunąć plik wystarczy nam informacja o jego guId. Zapytanie może zawierać więcej informacji, ale nie są one obowiązkowe. Nie może natomiast nie zawierać "guId", poniższe zapytanie nie zadziała:  
 
-Przykład 2: nieprawidłowe zapytanie
+Przykład 2: nieprawidłowe zapytanie  
 {  
     "fileName": "test.xml",  
     "srcLang": "EN",  
@@ -138,7 +138,7 @@ Przykład 1:
 }  
 Żeby usunąć segment wystarczy nam informacja o jego guId. Zapytanie może zawierać więcej informacji, ale nie są one obowiązkowe. Nie może natomiast nie zawierać "guId", poniższe zapytanie nie zadziała:  
 
-Przykład 2 (nieprawidłowe zapytanie):
+Przykład 2 (nieprawidłowe zapytanie):  
 {  
     "srcText": "To jest source",  
     "trgText": "Zrodelko",  
