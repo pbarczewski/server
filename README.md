@@ -90,7 +90,7 @@ Ad. 1: Żeby zapisać w bazie danych obiekt typu segment, musimy wysłać przez 
   `ed` double double liczba zmiennoprzecinkowa, może być puste,  
   `fileid` int(11)  liczba całkowita, <b>nie może być puste</b> / klucz obcy ustanawiający relacje z obiektem typu "file" do którego przynależy, musi się więc odnosić do istniejącego pliku w bazie danych o konkretnym 'guiId' 
 
-#  DELETE
+###  DELETE
 Rekordy można także usuwać z bazy danych
 adresy:
 1. http://localhost:8080/files
